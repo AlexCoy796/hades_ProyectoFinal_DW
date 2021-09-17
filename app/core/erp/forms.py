@@ -7,8 +7,8 @@ class CategoryForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # for form in self.visible_fields():
-        #    form.field.widget.attrs['class'] = 'form-control'
-        #    form.field.widget.attrs['autocomplete'] = 'off'
+        #     form.field.widget.attrs['class'] = 'form-control'
+        #     form.field.widget.attrs['autocomplete'] = 'off'
         self.fields['name'].widget.attrs['autofocus'] = True
 
     class Meta:
@@ -17,16 +17,16 @@ class CategoryForm(ModelForm):
         widgets = {
             'name': TextInput(
                 attrs={
-                    'placeholder': 'Ingrese Un Nombre',
+                    'placeholder': 'Ingrese un nombre',
                 }
             ),
             'desc': Textarea(
                 attrs={
-                    'placeholder': 'Ingrese Una Descripción',
+                    'placeholder': 'Ingrese una Descripción',
                     'rows': 3,
                     'cols': 3
                 }
-            )
+            ),
         }
 
     def save(self, commit=True):
